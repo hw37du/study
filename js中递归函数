@@ -13,6 +13,18 @@
 当堆栈中的最后一项完成执行时，该上下文将生成一个返回值。
 该返回值作为递归情况下的递归值传递到下一个项目。
 然后将执行上下文弹出堆栈
+通常，递归函数至少包含两部分：基本条件和至少一个递归情况
+
+举个例子，阶乘函数
+const factorial = function(num) {  debugger;  if (num === 0 || num === 1) {    return 1  } else {    return num * factorial(num - 1)  }}
+
+我们可以看到如果将调试器语句插入代码并使用devtools逐步执行并观察调用堆栈，将会发生什么情况。
+1，执行栈将factorial(5)push到栈中，方法执行的时候，if条件为false，所以进入到递归
+2，执行栈将factorial(4)push到栈中，方法执行的时候，if条件为false，所以进入到递归
+3，执行栈将factorial(3)push到栈中，方法执行的时候，if条件为false，所以进入到递归
+4，执行栈将factorial(2)push到栈中，方法执行的时候，if条件为false，所以进入到递归
+5，执行栈将factorial(1)push到栈中，方法执行的时候，if条件为true，所以返回1
+
 
 
 参考文章
