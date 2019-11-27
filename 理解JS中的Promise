@@ -23,4 +23,6 @@ Promise具有简单的API，但有一定的学习曲线。
 1，IOC
 2，处理复杂的错误
 
+参考文章
+https://scotch.io/tutorials/understanding-javascript-promises-pt-i-background-basics
 
