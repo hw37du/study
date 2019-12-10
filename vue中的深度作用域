@@ -1,0 +1,41 @@
+当 <style> 标签有 scoped 属性时，它的 CSS 只作用于当前组件中的元素。它通过使用 PostCSS 来实现以下转换
+<style scoped>
+.example {
+  color: red;
+}
+</style>
+
+<template>
+  <div class="example">hi</div>
+</template>
+
+转换结果：
+
+<style>
+.example[data-v-f3f3eg9] {
+  color: red;
+}
+</style>
+
+<template>
+  <div class="example" data-v-f3f3eg9>hi</div>
+</template>
+
+使用 scoped 后，父组件的样式将不会渗透到子组件中,不过一个子组件的根节点会同时受其父组件的 scoped CSS 和子组件的 scoped CSS 的影响。
+这样设计是为了让父组件可以从布局的角度出发，调整其子组件根元素的样式，例如
+parent
+<div></div>
+child
+<div></div>
+<parent class="classA">
+<child class="classB"></child>
+</parent>
+.classA不会影响到child，但是classB会影响到child
+
+
+<style scoped>
+.a >>> .b { /* ... */ }
+</style>
+
+上述代码将会编译成：
+.a[data-v-f3f3eg9] .b { /* ... */ }
