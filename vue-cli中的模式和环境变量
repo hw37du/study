@@ -1,0 +1,9 @@
+1，环境变量
+   项目根目录下的.env文件就是放环境变量的文件,如下
+   .env.production
+   .env.test
+   .env.development
+   文件中 的变量以键=值”对的形式出现
+   被载入的变量将会对 vue-cli-service 的所有命令、插件和依赖可用
+   
+2，模式
