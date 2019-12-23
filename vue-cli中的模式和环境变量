@@ -6,4 +6,13 @@
    文件中 的变量以键=值”对的形式出现
    被载入的变量将会对 vue-cli-service 的所有命令、插件和依赖可用
    
+   .env.production将会比一般的环境文件 (例如 .env) 拥有更高的优先级
+   
+   NODE_ENV变量说明
+   如果在环境中有默认的 NODE_ENV，你应该移除它或在运行 vue-cli-service 命令的时候明确地设置 NODE_ENV
+   
 2，模式
+   模式是 Vue CLI 项目中一个重要的概念。默认情况下，一个 Vue CLI 项目有三个模式：
+   development 模式用于 vue-cli-service serve
+   production 模式用于 vue-cli-service build 和 vue-cli-service test:e2e
+   test 模式用于 vue-cli-service test:unit
