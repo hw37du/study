@@ -1,0 +1,10 @@
+apply和call比较相似，都是调用函数自身，并将this作为第一个参数传入
+不同之处例如
+someFunc.call(thisArg, 1, 2, 3) VS someFunc.apply(thisArg, [1, 2, 3])
+内部处理的逻辑类似于
+var someFunc = function () {
+return this.length
+}
+等价于
+[1, 2, 3].someFunc(); //3
+但是，在没有特殊绑定的情况下调用someFunc（）会返回undefined，因为默认情况下此绑定到window对象
