@@ -8,3 +8,9 @@ return this.length
 等价于
 [1, 2, 3].someFunc(); //3
 但是，在没有特殊绑定的情况下调用someFunc（）会返回undefined，因为默认情况下此绑定到window对象
+
+bind(arg)返回一个函数，该函数绑定在arg上
+
+总结一下
+apply(),call()和bind()都已this参数为上下文来执行函数，但是call()和apply()立即调用函数，而bind是返回函数
+
